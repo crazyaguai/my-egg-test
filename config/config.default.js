@@ -1,5 +1,6 @@
 // config/config.default.js
 // exports.keys = "123456";
+const path = require('path')
 
 module.exports = appInfo => {
   return {
@@ -15,5 +16,19 @@ module.exports = appInfo => {
         ignoreJSON: true, // 默认为 false，当设置为 true 时，将会放过所有 content-type 为 `application/json` 的请求
       },
     },
+    view: {
+      root: path.join(appInfo.baseDir, 'app/view'),
+      mapping: {
+        '.nj': 'nunjucks',
+      },
+      defaultViewEngine: 'nunjucks',
+    },
+    multipart: {
+      fileSize: '50mb',
+      mode: 'file',
+      fileExtensions: [
+        '.txt',
+      ],
+    }
   };
 };

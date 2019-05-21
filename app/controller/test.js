@@ -19,7 +19,15 @@ class TestController extends Controller {
     const {ctx} = this
     console.log('body data')
     console.log(ctx.request.body)
+    console.log(ctx.method)
     ctx.body = 'success'
+  }
+  async getFile(){
+    const {ctx} = this
+    const file = ctx.request.files;
+    console.log("文件-------------")
+    console.log(file)
+    ctx.body = '123'
   }
 }
 

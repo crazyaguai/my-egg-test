@@ -5,5 +5,6 @@ module.exports = app => {
   router.get('/search',controller.test.getSearch)
   router.get('/params/:id',controller.test.getParams)
   router.post('/post',controller.test.getBody)
+  router.post('/file',controller.test.getFile)
   // app.router.redirect('/', '/home/index', 302);
 }
