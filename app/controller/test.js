@@ -29,6 +29,12 @@ class TestController extends Controller {
     console.log(file)
     ctx.body = '123'
   }
+  async getData(){
+    const {ctx,service} = this
+    const params = {a:1}
+    const res = await service.test.getData(params)
+    ctx.body = res
+  }
 }
 
 module.exports = TestController
